@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+  height: 100%;
+}
+
+.layout{
+  height: 100%;
+}
+
+.header{
+  color: white;
+}
+
+.content{
+  width:100%;
+}
+
+
+.mainScreen{
+    display: flex;
+    flex-direction: row;
+    height: 80vh;
+  }

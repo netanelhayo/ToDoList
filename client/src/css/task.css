@@ -1,0 +1,33 @@
+.task{ 
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+}
+
+.taskContent{
+    width:90%;
+}
+
+.title{
+    font-size: xx-large;
+    font: bolder;
+}
+
+.taskTitle{
+    cursor: pointer;
+    font-size: large;
+    font: bold;
+}
+
+.xButton{
+    width: 10%;
+    border: solid 1px black;
+    background-color: red;
+    cursor: pointer;
+}
+
+.expandButton{
+    cursor:pointer;
+    font-size: xx-small;
+    padding: 0;
+}

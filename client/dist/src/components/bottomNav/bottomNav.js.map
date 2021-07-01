@@ -1,0 +1,1 @@
+{"version":3,"file":"bottomNav.js","sourceRoot":"","sources":["../../../../src/components/bottomNav/bottomNav.tsx"],"names":[],"mappings":";;;AAAA,sCAAmC;AACnC,4CAAyC;AAEzC,mCAAiC;AAE1B,MAAM,SAAS,GAAG,CAAC,KAAU,EAAE,EAAE;IAEpC,OAAO,6BAAK,SAAS,EAAC,WAAW;QAC7B,oBAAC,eAAM,IAAC,SAAS,EAAE,KAAK,CAAC,SAAS,GAAW;QAC7C,oBAAC,qBAAS,OAAa,CACrB,CAAA;AACV,CAAC,CAAA;AANY,QAAA,SAAS,aAMrB"}

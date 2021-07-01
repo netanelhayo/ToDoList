@@ -1,0 +1,14 @@
+.bottomNav{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.addTaskForm{
+    display:flex;
+    flex-direction: column;
+}
+
+.filter{
+    height: 100px;
+}
