@@ -11,7 +11,11 @@ export class PGDB implements ITodoDatabase {
     constructor() {
         this.pool = new Pool({
             max: 20,
-            connectionString: PostgresConfig.connectionString,
+            user: PostgresConfig.username,
+            host: PostgresConfig.hostName,
+            database: PostgresConfig.dbName,
+            password: PostgresConfig.password,
+            port: PostgresConfig.port,
             idleTimeoutMillis: PostgresConfig.idleTimeoutMillis
         });
     }
@@ -19,16 +23,12 @@ export class PGDB implements ITodoDatabase {
     async getAllTasks(): Promise<TaskDTO[]> {
         let todos: TaskDTO[];
         try {
-            console.log("really before")
             const client = await this.pool.connect();
 
             const query = "SELECT * FROM tasks";
-            console.log("before");
             const { rows } = await client.query(query);
-            console.log("after");
             todos = rows;
 
-            console.log(todos.length);
             client.release();
         }
         catch (e) {

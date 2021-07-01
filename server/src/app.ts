@@ -27,14 +27,16 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(cors());
 
+
 const mongodb = new MongoDb();
+mongodb.connect();
 const pg = new PGDB();
 
 const dbManager = new DBManager([mongodb, pg]);
 
-dbManager.setActiveDB(DBs.postgreSql);
+dbManager.setActiveDB(DBs.mongoDB);
 
-const taskProvider: TaskProvider = new TaskProvider(dbManager);
+const taskProvider: TaskProvider = new TaskProvider(pg);
 const taskcontroller: TaskController = new TaskController(taskProvider, io);
 
 app.use('/tasks', taskcontroller.Router);

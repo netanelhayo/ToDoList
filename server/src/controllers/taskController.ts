@@ -20,7 +20,7 @@ export class TaskController {
                 await provider.deleteTask(req.params.id);
                 socket.emit('UpdateTasks');
                 res.send(200);
-            } catch (e: any) {
+            } catch (e) {
                 res.send(400);
             }
         });
@@ -30,7 +30,7 @@ export class TaskController {
                 await provider.toggleCompleted(req.params.id);
                 socket.emit('UpdateTasks');
                 res.send(200);
-            } catch (e: any) {
+            } catch (e) {
                 res.send(400);
             }
         });
@@ -46,7 +46,7 @@ export class TaskController {
                 });
                 socket.emit('UpdateTasks');
                 res.send(200);
-            } catch (e: any) {
+            } catch (e) {
                 res.send(400);
             }
         });

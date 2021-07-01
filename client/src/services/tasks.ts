@@ -8,9 +8,7 @@ export const TasksService = {
     getAllTasks: async (): Promise<TaskDTO[] | undefined> => {
 
         try {
-            console.log("before");
             const b: TaskDTO[] = (await axios.get(SERVER_URL + "/tasks")).data;
-            console.log("after");
             return b;
         } catch (e) {
             console.log(e);
@@ -34,8 +32,5 @@ export const TasksService = {
 
     markAsDoneOrUndone: async (id: string) => {
         await axios.put(SERVER_URL + `/tasks/${id}`);
-        console.log("Task toggled")
     }
-
-
 }

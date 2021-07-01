@@ -6,12 +6,15 @@ import { MongoConfig } from '../../config';
 import ITask from "./interfaces/ITask";
 
 export class MongoDb implements ITodoDatabase {
-    constructor() {
+
+    async connect() {
         try {
-            mongoose.connect(MongoConfig.url, MongoConfig.options)
-        } catch (e: any) {
+            await mongoose.connect("mongodb://" + MongoConfig.host + "/todo", MongoConfig.options)
+            console.log("connected to mongo");
+        } catch (e) {
             console.log("Mongo connection faild: " + e);
         }
+        mongoose.connection.on('error', console.error.bind(console, 'mongo error:'));
     }
     async getAllTasks(): Promise<TaskDTO[]> {
         return await Task.find().exec();
@@ -26,7 +29,7 @@ export class MongoDb implements ITodoDatabase {
         })
         taskToAdd.save(function (err: mongoose.NativeError, task: ITask) {
             if (err) {
-                console.log(err);
+                console.log("saving error" + err);
             }
 
         });

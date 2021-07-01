@@ -16,6 +16,7 @@ const defaultTask: TaskDTO = {
 }
 
 interface IProps {
+    children: never[],
     socket: Socket,
     userToFilterBy: string
 }
@@ -31,7 +32,7 @@ export const MainScreen = (props: IProps) => {
     }, [props.socket])
 
     if (tasks[0] === defaultTask) {
-        return <div>loading</div>;
+        return <div>loading...</div>;
     }
     return <div className="mainScreen">
         <TaskList className="list"

@@ -6,9 +6,7 @@
     "checkJs": false,
     "jsx": "react-jsx",
     "skipLibCheck": true,
-    "moduleResolution": "node",
     "outDir": "dist",
-    "strict": true,
     "esModuleInterop": true,
     "lib": [
       "dom",
@@ -19,8 +17,10 @@
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true
+    "noEmit": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "isolatedModules": true
   },
   "lib": [
     "es2015"

@@ -1,1 +1,2 @@
-export const SERVER_URL = "http://localhost:3001";
+require('dotenv').config({ path: 'env/config.env' });
+export const SERVER_URL = process.env.SERVER_URL || "http://localhost:3001";
