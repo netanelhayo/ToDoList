@@ -7,12 +7,12 @@ import './css/App.css';
 import "antd/dist/antd.css";
 
 import socketIOClient from "socket.io-client";
-const ENDPOINT = "http://localhost:3001";
+import { SERVER_URL } from './config';
 
 const { Header, Content, Footer } = Layout;
 
 function App() {
-  const socket = socketIOClient(ENDPOINT);
+  const socket = socketIOClient(SERVER_URL);
   const [userToFilterBy, setUserToFilterBy] = React.useState("");
 
   return (
